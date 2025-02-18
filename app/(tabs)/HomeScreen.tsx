@@ -1,11 +1,11 @@
-import { Image, Platform, StyleSheet } from "react-native";
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
-import React, { useContext } from "react";
 import { VideoView } from "expo-video";
+import React, { useContext } from "react";
+import { Image, StyleSheet } from "react-native";
 import { VideoPlayerContext } from "../_layout";
 
 const vstyles = StyleSheet.create({
@@ -28,19 +28,18 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">PAGE 1</ThemedText>
+        <ThemedText type="title">Page 2</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <VideoView style={vstyles.video} player={videoPlayer.current} />
 
-        <Link href="/(tabs)/HomeScreen">Go to videoscreen</Link>
+        <Link href="/(tabs)">Go to videoscreen</Link>
       </ThemedView>
     </ParallaxScrollView>
   );
 }
-
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: "row",
