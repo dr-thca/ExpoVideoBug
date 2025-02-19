@@ -9,8 +9,6 @@ export default function Quad() {
     <View style={styles.stepContainer}>
       <VideoView style={styles.video} player={videoPlayer} />
       <VideoView style={styles.video} player={videoPlayer} />
-      <VideoView style={styles.video} player={videoPlayer} />
-      <VideoView style={styles.video} player={videoPlayer} />
     </View>
   );
 }
@@ -21,7 +19,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   video: {
-    height: "25%",
+    height: "50%",
     width: "75%",
   },
   stepContainer: {
