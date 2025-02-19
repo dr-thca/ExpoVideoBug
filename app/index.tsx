@@ -1,14 +1,24 @@
 import { useVideoPlayer, VideoView } from "expo-video";
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
 export default function Quad() {
   const anotherlink = "https://www.w3schools.com/html/mov_bbb.mp4";
   const videoPlayer = useVideoPlayer(anotherlink);
+  const [secondPlayerIsReady, setSecondPlayerIsReady] = React.useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSecondPlayerIsReady(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  });
+
   return (
     <View style={styles.stepContainer}>
       <VideoView style={styles.video} player={videoPlayer} />
-      <VideoView style={styles.video} player={videoPlayer} />
+      {secondPlayerIsReady && (
+        <VideoView style={styles.video} player={videoPlayer} />
+      )}
     </View>
   );
 }
